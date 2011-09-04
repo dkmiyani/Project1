@@ -1,0 +1,22 @@
+<h3> Create a New User </h3>
+
+<br/>
+
+<%= form_tag('/users/new') do %>
+   Name: <%= text_field_tag 'name' %> <br/>
+   Email Address: <%= text_field_tag 'email_address' %> <br/>
+   Password: <%= text_field_tag 'password' %> <br/>
+   <%= submit_tag 'Submit' %> <br/>
+<% end -%>
+
+<br/>
+
+<h3> List of Users </h3>
+
+<% @users_list.each do |user| %>
+   ID: <%= user.id %>
+   Name: <%= user.name || "<No Name>"%> <br/>
+   Email Address: <%= user.email_address || "<No Email Address>"%> <br/>
+   Password: <%= user.password || "<No Password>"%> <br/>
+   <br/>
+<% end %>

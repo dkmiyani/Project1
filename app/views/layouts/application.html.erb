@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Project1</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="style.css" type="text/css" charset="utf-8" />
+</head>
+<body>
+   <div id="container">
+      <div id="menu">
+         <ul>
+            
+            <li id="m01"><%= link_to 'Users', users_path %></li>
+
+         </ul>
+      </div>
+      <%= yield %>
+   
+   </div>
+</body>
+</html>
