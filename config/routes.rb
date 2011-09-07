@@ -2,7 +2,10 @@ Project1::Application.routes.draw do
   
   match '/users' => 'user#index'
   match '/users/new' => 'user#create'
+  match '/tasks' => 'task#index'
+  match '/tasks/new' => 'task#create'
   
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

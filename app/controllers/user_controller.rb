@@ -1,7 +1,7 @@
 class UserController < ApplicationController
 
    def index 
-      @users_list = User.all || []
+      @users_list = User.all 
    end
    
    def create

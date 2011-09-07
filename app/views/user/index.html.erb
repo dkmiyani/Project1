@@ -14,7 +14,7 @@
 <h3> List of Users </h3>
 
 <% @users_list.each do |user| %>
-   ID: <%= user.id %>
+   ID: <%= user.id %><br/>
    Name: <%= user.name || "<No Name>"%> <br/>
    Email Address: <%= user.email_address || "<No Email Address>"%> <br/>
    Password: <%= user.password || "<No Password>"%> <br/>

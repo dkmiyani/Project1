@@ -1,0 +1,30 @@
+
+<div id='right'>
+   
+   <u>Create Task:</u>
+   <br/>
+   <br/>
+   <%= form_tag tasks_new_path do %>
+      Name: <%= text_field_tag 'name' %><br/>
+      Description: <%= text_field_tag 'desc' %><br/>
+      Due Date: <%= text_field_tag 'due_date' %><br/><br/>
+      <%= submit_tag 'Submit' %><br/>
+   <% end %>
+   
+</div>
+
+<div id='left'>
+
+   <u>Show Tasks:</u>
+   <br/>
+   <br/>
+   <% @tasks_list.each do |task| %>  
+      ID: <%= task.id %><br/>
+      Name: <%= task.name || "<No Name>"%> <br/>
+      Desc: <%= task.description || "<No Desc>"%> <br/>
+      Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
+      Status: <%= task.status %> <br/>
+      <br/>
+   <% end %>
+   
+</div>
