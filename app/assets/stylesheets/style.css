@@ -65,6 +65,7 @@ a:hover {
 	float: left;
 	width: 350px;
 	margin: 0;
+	margin-top: 15px;
 	padding: 0;
 	color: #B55100;
 	background: url('img02.jpg') no-repeat left 15px;

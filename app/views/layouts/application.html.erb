@@ -16,13 +16,19 @@
 	<div id="header-wrapper">
 		<div id="header">
 			<div id="logo">
-				<h2><a href="#">Welcome to Project 1</a></h2>
+				<h2><%= link_to "Project 1", root_path %></h2>
 			</div>
 			<div id="menu">
 				<ul>
+				    <li><%= link_to 'Home', root_path %></li>
 				    <li><%= link_to 'Edit User', edit_user_registration_path %></li>
 				    <li><%= link_to 'Tasks', tasks_path %></li>
-				    <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete if current_user %></li>            
+				    <% if current_user %>
+				      <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li> 
+				    <% else %>
+				      <li><%= link_to 'Sign In', new_user_session_path %></li> 
+				    <% end %>
+				               
 				</ul>
 			</div>
 		</div>
