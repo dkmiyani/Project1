@@ -1,22 +1,14 @@
-<h3> Create a New User </h3>
+<div id='right'><h3> Create a New User </h3></div>   
+<div id='left'><h3> Edit your profile </h3> </div>
 
 <br/>
 
-<%= form_tag('/users/new') do %>
-   Name: <%= text_field_tag 'name' %> <br/>
-   Email Address: <%= text_field_tag 'email_address' %> <br/>
-   Password: <%= text_field_tag 'password' %> <br/>
-   <%= submit_tag 'Submit' %> <br/>
-<% end -%>
+<div id='right'>
+   <%= link_to "Sign Up", new_user_registration_path   %>
+</div>
 
 <br/>
 
-<h3> List of Registered Users </h3>
-
-<% @users_list.each do |user| %>
-   ID: <%= user.id %><br/>
-   Name: <%= user.name || "<No Name>"%> <br/>
-   Email Address: <%= user.email_address || "<No Email Address>"%> <br/>
-   Password: <%= user.password || "<No Password>"%> <br/>
-   <br/>
-<% end %>
+<div id='left'> 
+  <%= link_to "Edit", edit_user_registration_path   %>
+</div>

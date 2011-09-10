@@ -1,5 +1,7 @@
 Project1::Application.routes.draw do
   
+  devise_for :users
+
   match '/users' => 'user#index'
   match '/users/new' => 'user#create'
   match '/tasks' => 'task#index'
