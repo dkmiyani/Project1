@@ -1,29 +1,39 @@
-<div id='right'>
-   
-   <u>Create Task:</u>
-   <br/>
-   <br/>
-   <%= form_tag tasks_new_path do %>
-      Name: <%= text_field_tag 'name' %><br/>
-      Description: <%= text_field_tag 'desc' %><br/>
-      Due Date: <%= text_field_tag 'due_date' %><br/><br/>
-      <%= submit_tag 'Submit' %><br/>
-   <% end %>
-   
-</div>
 
-<div id='left'>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-   <u>Show Tasks:</u>
-   <br/>
-   <br/>
-   <% @tasks_list.each do |task| %>  
-      ID: <%= task.id %><br/>
-      Name: <%= task.name || "<No Name>"%> <br/>
-      Desc: <%= task.description || "<No Desc>"%> <br/>
-      Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
-      Status: <%= task.status %> <br/>
-      <br/>
-   <% end %>
-   
+<div id="page">
+	<div id="page-bgtop">
+		<div id="page-bgbtm">
+			<div id="content">
+				<h3>Create Task:</h3>
+				   <br/>
+				   <br/>
+				  <%= form_tag tasks_new_path do %>
+					 Name: <%= text_field_tag 'name' %><br/>
+					 Description: <%= text_field_tag 'desc' %><br/>
+					 Due Date: <%= text_field_tag 'due_date' %><br/><br/>
+					 <%= submit_tag 'Submit' %><br/>
+				   <% end %>
+ 
+					<div style="clear: both;">&nbsp;</div>
+			</div>
+
+			<div id="sidebar">
+				<div style="clear: both;">&nbsp;</div>
+  				<ul>
+					<h2>Show Tasks:</h2>
+   					<br/><br/>
+				   <% @tasks_list.each do |task| %>  
+					 ID: <%= task.id %><br/>
+					 Name: <%= task.name || "<No Name>"%> <br/>
+					 Desc: <%= task.description || "<No Desc>"%> <br/>
+					 Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
+					 Status: <%= task.status %> <br/>
+					 <br/>
+				   <% end %>
+				</ul>
+			</div>
+	</div>
 </div>
+<div style="clear: both;">&nbsp;</div>
+
