@@ -1,13 +1,13 @@
 <div id='right'>
    
-   <u>Create Task:</u>
+   <h3>Create Task:</h3>
    <br/>
    <br/>
    <%= form_tag tasks_new_path do %>
       Name: <%= text_field_tag 'name' %><br/>
       Description: <%= text_field_tag 'desc' %><br/>
       Due Date: <%= text_field_tag 'due_date' %><br/><br/>
-      <%= submit_tag 'Submit' %><br/>
+      <%= submit_tag 'Submit', :disable_with => 'Please wait... ' %><br/>
    <% end %>
    
 </div>

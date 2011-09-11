@@ -5,12 +5,14 @@ class TaskController < ApplicationController
    end
    
    def create
+   
       begin
          @task_info = {
             :name => params[:name] ,
             :description => params[:desc] ,
             :due_date => params[:due_date],
-            :status => 'Inactive'
+            :status => 'Inactive',
+            :user_id => current_user.id
          }
          Task.create @task_info
       rescue 
