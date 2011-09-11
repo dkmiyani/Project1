@@ -1,29 +1,29 @@
-<div id='right'>
-   
-   <h3>Create Task:</h3>
+<h3>Create Task:</h3>
+<br/><br/>
+
+<%= form_tag tasks_new_path do %>
+   Name: <%= text_field_tag 'name' %><br/>
+   Description: <%= text_field_tag 'desc' %><br/>
+   Due Date: <%= text_field_tag 'due_date' %><br/><br/>
+   <%= submit_tag 'Submit', :disable_with => 'Please wait... ' %><br/>
+<% end %>
+
+<br/>
+
+<div id="sidebar">
    <br/>
-   <br/>
-   <%= form_tag tasks_new_path do %>
-      Name: <%= text_field_tag 'name' %><br/>
-      Description: <%= text_field_tag 'desc' %><br/>
-      Due Date: <%= text_field_tag 'due_date' %><br/><br/>
-      <%= submit_tag 'Submit', :disable_with => 'Please wait... ' %><br/>
-   <% end %>
-   
+   <ul>
+      <h2>Show Tasks:</h2>
+      <br/><br/>
+
+      <% @tasks_list.each do |task| %>  
+         ID: <%= task.id %><br/>
+         Name: <%= task.name || "<No Name>"%> <br/>
+         Desc: <%= task.description || "<No Desc>"%> <br/>
+         Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
+         Status: <%= task.status %> <br/>
+         <br/>
+      <% end %>
+   </ul>
 </div>
 
-<div id='left'>
-
-   <u>Show Tasks:</u>
-   <br/>
-   <br/>
-   <% @tasks_list.each do |task| %>  
-      ID: <%= task.id %><br/>
-      Name: <%= task.name || "<No Name>"%> <br/>
-      Desc: <%= task.description || "<No Desc>"%> <br/>
-      Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
-      Status: <%= task.status %> <br/>
-      <br/>
-   <% end %>
-   
-</div>
