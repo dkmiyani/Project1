@@ -34,12 +34,25 @@
 		</div>
 	</div>
 	<div id="page">
-		<div id="content">
-         <p class="notice"><%= notice %></p>
-         <p class="error"><%= alert %></p>
-			<%= yield %>
-		</div>
+	   <div id="page-bgtop">
+	      <div id="page-bgbtm">       
+		      <div id="content">
+               <p class="notice"><%= notice %></p>
+               <p class="error"><%= alert %></p>
+			      <%= yield %>
+		      </div>
+		
+		      <div id="sidebar">
+		         <%= yield :sidebar %>
+		      </div>
+            <div style="clear: both;" ></div>
+		      
+		   </div>
+	   </div>      
 	</div>
+	<div id='footer'>
+	   <p>This Site is made by Dhaval Miyani and Rajavi Shah. Copyright protected!</p>
+	</div>	
 </div>
 
 </body>

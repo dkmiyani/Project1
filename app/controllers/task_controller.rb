@@ -1,7 +1,7 @@
 class TaskController < ApplicationController
 
    def index
-      @tasks_list = Task.all 
+      @tasks_list = current_user.tasks.all 
    end
    
    def create

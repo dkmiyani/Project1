@@ -197,19 +197,19 @@ a:hover {
 /* Content */
 
 #content {
+	min-height: 450px;
 	float: left;
 	width: 650px;
 	padding: 0px 0px 0px 0px;
 }
 
 .post {
-	margin-bottom: 40px;
+	//margin-bottom: 40px;
 	border-bottom: 1px dotted #E7E2DC;
 }
 
 .post .title {
-	height: 41px;
-	padding: 7px 0px 0px 30px;
+	padding: 7px 0px 15px 30px;
 	letter-spacing: -.5px;
 }
 
