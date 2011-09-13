@@ -2,9 +2,9 @@ Project1::Application.routes.draw do
   
   devise_for :users
 
-  match '/users' => 'user#index'
+  match '/users' => 'user#show'
   match '/users/new' => 'user#create'
-  match '/tasks' => 'task#index'
+  match '/tasks' => 'task#show'
   match '/tasks/new' => 'task#create'
   
 

@@ -1,6 +1,6 @@
 class TaskController < ApplicationController
 
-   def index
+   def show
       @tasks_list = current_user.tasks.all 
    end
    

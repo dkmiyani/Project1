@@ -10,6 +10,8 @@ gem 'execjs'
 
 gem 'devise'
 
+gem 'awesome_nested_set'
+
 gem 'therubyracer'
 
 # Gems used only for assets and not required
