@@ -1,0 +1,41 @@
+<% @tasks_list.each do |task| %>  
+  <div class='post'>
+     <h4 class='title'> Name: <%= task.name || "<No Name>" %> </h4>
+     <div class='entry'> 
+         Desc: <%= task.description || "<No Desc>"%> <br/>
+         Due Date: <%= task.due_date || "<No Due Date>"%> <br/>
+         Category: <%= task.category.name || "<NONE>" %><br/>
+         Status: <%= task.status %> <br/>
+     </div>
+     <div style="clear: both;" ></div>
+  </div>
+<% end %>
+
+
+<% content_for :sidebar do %>
+   
+   <h3>Create Category:</h3>
+   <br/>
+   
+   <%= form_tag category_new_path do %>
+      Name: <%= text_field_tag 'name' %><br/>
+      Categories: <%= select_tag 'parent_id', options_for_select( show_categories )%><br/>
+      Sub-category (of above Parent Category): <%= check_box_tag "children", 'yes' %><br/>
+      <%= submit_tag 'Submit', :disable_with => 'Please wait... ' %><br/>
+   <% end %>
+
+   <br/><br/> 
+   
+   <h3>Create Task:</h3>
+   <br/>
+   <%= form_tag tasks_new_path do %>
+      Name: <%= text_field_tag 'name' %><br/>
+      Description: <%= text_field_tag 'desc' %><br/>
+      Due Date: <%= text_field_tag 'due_date' %><br/>
+      Category: <%= select_tag 'parent_id', options_for_select( show_categories )%><br/> 
+      <%= submit_tag 'Submit', :disable_with => 'Please wait... ' %><br/>
+   <% end %>
+
+   <br/>
+<% end %>
+

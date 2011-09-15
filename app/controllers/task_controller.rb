@@ -12,7 +12,8 @@ class TaskController < ApplicationController
             :description => params[:desc] ,
             :due_date => params[:due_date],
             :status => 'Inactive',
-            :user_id => current_user.id
+            :user_id => current_user.id,
+            :category_id => params[:parent_id]
          }
          Task.create @task_info
       rescue 
@@ -21,5 +22,4 @@ class TaskController < ApplicationController
       
       redirect_to tasks_path
    end
-
 end

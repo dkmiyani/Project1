@@ -6,6 +6,7 @@ Project1::Application.routes.draw do
   match '/users/new' => 'user#create'
   match '/tasks' => 'task#show'
   match '/tasks/new' => 'task#create'
+  match 'category/new' => 'category#create'
   
 
   # The priority is based upon order of creation:
